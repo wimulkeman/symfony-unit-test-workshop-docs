@@ -1,0 +1,29 @@
+site_name: Unit Test Workshop
+
+theme:
+  name: material
+  palette:
+
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Donkere modus
+
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Lichte modus
+
+  icon:
+    repo: material/bitbucket
+
+  language: nl
+
+repo_url: https://bitbucket.org/assuradeurengilde/unit-testing-workshop/src/master/
+edit_uri: ""
+
+plugins: []
