@@ -44,3 +44,5 @@ nav:
       - Laravel + PHPUnit: tabs/Laravel/testen-binnen-laravel.md
   - Referenties:
       - Overzicht: tabs/Referenties/index.md
+      - Unit vs Integration: tabs/Referenties/unit-vs-integration-test.md
+      - Tools: tabs/Referenties/tools.md

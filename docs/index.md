@@ -1,17 +1,11 @@
-# Welcome to MkDocs
+# Welkom
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Welkom bij de workshop. Gedurende deze workshop zal je bezig gaan met het toepassen
+van Unit Tests binnen applicaties. Voor het opzetten van de Unit Tests wordt binnen
+deze workshop gebruik gemaakt van [PHPUnit](https://phpunit.de/), maar er zijn
+verschillende tools voor beschikbaar.
 
-## Commands
-
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
-
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+De workshop bestaat uit een aantal verschillende stappen. Het wordt aangeraden de
+stappen na elkaar te volgen zodat je bekend bent met de basis voordat je verder
+gaat. De stappen gaan er vanuit dat je kennis hebt opgebouwd vanuit de vorige
+stappen.
