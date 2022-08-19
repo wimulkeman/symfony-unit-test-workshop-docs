@@ -25,7 +25,22 @@ theme:
 
   language: nl
 
-repo_url: https://bitbucket.org/assuradeurengilde/unit-testing-workshop/src/master/
+  features:
+    - navigation.tabs
+
+repo_url: https://bitbucket.org/assuradeurengilde/unit-testing-workshop
+repo_name: Workshop Code
 edit_uri: ""
 
 plugins: []
+
+nav:
+  - Home: index.md
+  - Setup:
+      - Installatie: tabs/Setup/installatie.md
+  - PHPUnit:
+      - Introductie: tabs/PHPUnit/introductie-in-phpunit.md
+  - Laravel:
+      - Laravel + PHPUnit: tabs/Laravel/testen-binnen-laravel.md
+  - Referenties:
+      - Overzicht: tabs/Referenties/index.md
