@@ -1,0 +1,39 @@
+
+<svg width="91px" height="82px" viewBox="0 0 91 82" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="AAP----Welcome-page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.997033">
+        <g id="AAP---Welcome-page---dark-mode" transform="translate(-609.000000, -178.000000)">
+            <g id="content" transform="translate(261.000000, 82.000000)">
+                <g id="container-aap-welcome" transform="translate(2.000000, 0.000000)">
+                    <g id="aap-dashboard-greeting" transform="translate(44.000000, 19.000000)">
+                        <g id="aap" transform="translate(292.654823, 77.925414)">
+                            <g id="eares" transform="translate(9.350936, 22.790055)" fill="#FFFFFF" stroke="#2ABAA0" stroke-width="4">
+                                <ellipse id="right-ear" cx="10.2978665" cy="10.359116" rx="8.29786651" ry="8.35911602"></ellipse>
+                                <ellipse id="left-ear" cx="80.0945173" cy="10.359116" rx="8.29786651" ry="8.35911602"></ellipse>
+                            </g>
+                            <g id="outer-face" transform="translate(18.701873, 0.000000)" fill="#2ABAA0">
+                                <ellipse id="face-bottoms" cx="36.3647521" cy="55.195121" rx="36.3647521" ry="25.605984"></ellipse>
+                                <ellipse id="head" stroke="#2ABAA0" stroke-width="4" cx="36.3647521" cy="29.589137" rx="30.9014424" ry="27.589137"></ellipse>
+                            </g>
+                            <g id="inner-face" transform="translate(23.896837, 12.430939)" fill="#FFFFFF">
+                                <ellipse id="Oval" cx="31.1697875" cy="42.5100452" rx="31.1697875" ry="20.6805625"></ellipse>
+                                <ellipse id="Oval" cx="18.4709852" cy="16.084882" rx="13.8532389" ry="16.084882"></ellipse>
+                                <ellipse id="Oval" cx="43.8685898" cy="16.084882" rx="13.8532389" ry="16.084882"></ellipse>
+                            </g>
+                            <path d="M32.2087804,61.1187845 C47.7500947,70.7872928 62.6423265,70.7872928 76.8854759,61.1187845" id="mouth" stroke="#979797" stroke-width="2" stroke-linecap="round"></path>
+                            <g id="nose" transform="translate(49.871660, 45.580110)" stroke="#979797" stroke-linecap="round">
+                                <line x1="0.571446104" y1="0.517955801" x2="4.00012273" y2="0.517955801" id="right-nostril-"></line>
+                                <line x1="7.42879936" y1="0.517955801" x2="10.857476" y2="0.517955801" id="left-nostril"></line>
+                            </g>
+                            <g id="eyes" transform="translate(41.559717, 26.933702)">
+                                <ellipse id="right-eye" fill="#28BA9F" cx="5.6278783" cy="7.25138122" rx="5.6278783" ry="7.25138122"></ellipse>
+                                <ellipse id="left-eye" fill="#28BA9F" cx="21.3859375" cy="7.25138122" rx="5.6278783" ry="7.25138122"></ellipse>
+                                <ellipse id="pupil-right" fill="#FFFFFF" cx="7.31624179" cy="10.5981725" rx="1.68836349" ry="1.67339567"></ellipse>
+                                <ellipse id="pupil-left" fill="#FFFFFF" cx="23.074301" cy="10.5981725" rx="1.68836349" ry="1.67339567"></ellipse>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

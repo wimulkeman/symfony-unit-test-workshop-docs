@@ -23,6 +23,8 @@ theme:
   icon:
     repo: material/bitbucket
 
+  logo: assets/images/logo.svg
+
   language: nl
 
   features:
