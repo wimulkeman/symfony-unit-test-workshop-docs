@@ -34,6 +34,13 @@ edit_uri: ""
 
 plugins: []
 
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+
 nav:
   - Home: index.md
   - Setup:
@@ -43,6 +50,6 @@ nav:
   - Laravel:
       - Laravel + PHPUnit: tabs/Laravel/testen-binnen-laravel.md
   - Referenties:
-      - Overzicht: tabs/Referenties/index.md
-      - Unit vs Integration: tabs/Referenties/unit-vs-integration-test.md
-      - Tools: tabs/Referenties/tools.md
+      - E2E vs Unit vs Integration Tests: tabs/Referenties/e2e-vs-unit-vs-integration-test.md
+      - Terminologie: tabs/Referenties/terminologie.md
+      - Test Tools: tabs/Referenties/tools.md
