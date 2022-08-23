@@ -4,7 +4,7 @@ Test Terminologie
 ## Dummies [^1]
 
 !!! note
-    Dummies worden **buiten** de test implementatie om gedefinïeerd. Ze worden dus op zichzelf geïmplementeerd
+    Dummies worden **buiten** de test implementatie om gedefinieerd. Ze worden dus op zichzelf geïmplementeerd
     zonder dat de instantie weet in welke test deze gebruikt gaat worden.
 
 Objecten welke aangemaakt worden en doorgegeven worden, maar niet binnen de geteste code worden
@@ -14,7 +14,7 @@ niks mee doet.
 ## Fakes [^1]
 
 !!! note
-    Fakes worden **buiten** de test implementatie om gedefinïeerd. Ze worden dus op zichzelf geïmplementeerd
+    Fakes worden **buiten** de test implementatie om gedefinieerd. Ze worden dus op zichzelf geïmplementeerd
     zonder dat de instantie weet in welke test deze gebruikt gaat worden.
 
 Objecten welke daadwerkelijk worden gebruikt, maar niet-productie bevatten. Bijvoorbeeld om informatie
@@ -23,7 +23,7 @@ weg te schrijven naar een in-memory database in plaats van de daadwerkelijke dat
 ## Stubs [^1]
 
 !!! note
-    Stubs worden **buiten** de test implementatie om gedefinïeerd. Ze worden dus op zichzelf geïmplementeerd
+    Stubs worden **buiten** de test implementatie om gedefinieerd. Ze worden dus op zichzelf geïmplementeerd
     zonder dat de instantie weet in welke test deze gebruikt gaat worden.
 
 Objecten of resources welke vastgestelde waarden retourneert. Stubs worden vaak geheel afgesplitst van
@@ -35,7 +35,7 @@ systeem plaatsvindt.
 ## Spies [^1]
 
 !!! note
-    Spies worden **buiten** de test implementatie om gedefinïeerd. Hierdoor kan dezelfde spy worden
+    Spies worden **buiten** de test implementatie om gedefinieerd. Hierdoor kan dezelfde spy worden
     hergebruikt binnen verschillende tests.
 
 Zijn [Stubs](#stubs) met een extra functionaliteit. Ze houden bij hoe ze worden aangeroepen. Een toevoeging
@@ -44,7 +44,7 @@ kan bijvoorbeeld zijn dat een service bijhoudt hoe vaak deze is aangeroepen en m
 ## Mocks [^1]
 
 !!! warning
-    Mocks worden **binnen** de test implementatie gedefinïeerd. Hierdoor kan dezelfde mock worden
+    Mocks worden **binnen** de test implementatie gedefinieerd. Hierdoor kan dezelfde mock worden
     hergebruikt binnen verschillende tests.
 
 Mocks zijn een laagje om daadwerkelijke implementaties heen. Deze laag bevat de verwachtingen voor de
