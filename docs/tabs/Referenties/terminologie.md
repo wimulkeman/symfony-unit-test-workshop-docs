@@ -1,7 +1,7 @@
 Test Terminologie
 =================
 
-## Dummies
+## Dummies [^1]
 
 !!! note
     Dummies worden **buiten** de test implementatie om gedefinïeerd. Ze worden dus op zichzelf geïmplementeerd
@@ -11,7 +11,7 @@ Objecten welke aangemaakt worden en doorgegeven worden, maar niet binnen de gete
 gebruikt. Een voorbeeld zou een vanuit een interface vereiste argument kunnen zijn waar de functie
 niks mee doet.
 
-## Fakes
+## Fakes [^1]
 
 !!! note
     Fakes worden **buiten** de test implementatie om gedefinïeerd. Ze worden dus op zichzelf geïmplementeerd
@@ -20,7 +20,7 @@ niks mee doet.
 Objecten welke daadwerkelijk worden gebruikt, maar niet-productie bevatten. Bijvoorbeeld om informatie
 weg te schrijven naar een in-memory database in plaats van de daadwerkelijke database.
 
-## Stubs
+## Stubs [^1]
 
 !!! note
     Stubs worden **buiten** de test implementatie om gedefinïeerd. Ze worden dus op zichzelf geïmplementeerd
@@ -29,10 +29,10 @@ weg te schrijven naar een in-memory database in plaats van de daadwerkelijke dat
 Objecten of resources welke vastgestelde waarden retourneert. Stubs worden vaak geheel afgesplitst van
 de productie onderdelen waardoor ze alleen vanuit de tests benaderbaar en nuttig zijn.
 
-Stubs en Mocks kunnen ingezet worden om te voorkomen dat er daadwerkelijke interactie met de rest van het
+Stubs en [Mocks](#mocks) kunnen ingezet worden om te voorkomen dat er daadwerkelijke interactie met de rest van het
 systeem plaatsvindt.
 
-## Spies
+## Spies [^1]
 
 !!! note
     Spies worden **buiten** de test implementatie om gedefinïeerd. Hierdoor kan dezelfde spy worden
@@ -41,7 +41,7 @@ systeem plaatsvindt.
 Zijn [Stubs](#stubs) met een extra functionaliteit. Ze houden bij hoe ze worden aangeroepen. Een toevoeging
 kan bijvoorbeeld zijn dat een service bijhoudt hoe vaak deze is aangeroepen en met welke waarden.
 
-## Mocks
+## Mocks [^1]
 
 !!! warning
     Mocks worden **binnen** de test implementatie gedefinïeerd. Hierdoor kan dezelfde mock worden
@@ -57,5 +57,7 @@ wijze:
 Mocks worden door hun eigenschappen gebruikt om in (unit) tests geïsoleerd te kunnen controleren wat
 de reactie van code is op de werking van een implementatie waar het van afhankelijk is.
 
-Mocks hebben net als Stubs het voordeel dat ermee voorkomen kan worden dat er veranderingen binnen het systeem
+Mocks hebben net als [Stubs](#stubs) het voordeel dat ermee voorkomen kan worden dat er veranderingen binnen het systeem
 daadwerkelijk worden doorgevoerd.
+
+[^1]: [Martin Fowler - Mocks aren't Strubs #The Difference Between Mocks and Stubs](https://martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs)

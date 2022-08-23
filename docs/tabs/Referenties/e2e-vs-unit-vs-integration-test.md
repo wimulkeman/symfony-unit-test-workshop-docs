@@ -1,7 +1,7 @@
 E2E vs Unit vs Integration Tests
 ===============================
 
-Bij het testen van een applicatie kom je vaak verschillende termen tegen:
+Bij het testen van een applicatie kom je vaak verschillende termen [^1] tegen:
 
 * Unit Tests
 * Integration Tests
@@ -51,3 +51,5 @@ tests zijn.
 </figure>
 
 [Mocking]: /tabs/Referenties/terminologie/#mocks "Bekijk hier uitleg over Mocking en Stubbing"
+
+[^1]: [Lawrence Tan - Unit Tests, UI Tests, Integration Tests & End-To-End Tests](https://lawrey.medium.com/unit-tests-ui-tests-integration-tests-end-to-end-tests-c0d98e0218a6)
