@@ -1,5 +1,5 @@
-Asserting
-=========
+Asserts
+=======
 
 ## Wat is een test
 
@@ -33,6 +33,19 @@ Je zou daarbij een volgend overzicht moeten krijgen (de test regel is afhankelij
     elke testfunctie als een `.` getoond in het resultaat.
 
 🎉 Gelukt! Je hebt je eerste test geschreven!
+
+## Unhappy flow
+
+Een belangrijk punt van het testen is niet alleen controleren wat je weet wat mis gaat, maar ook
+controleren of je de situaties afdicht waarin het mis gaat in de code (unhappy flow).
+
+1. Schrijf een test om te controleren dat de waarde `not-bar` geen `foo` terug geeft, maar een `NULL`. waarde
+2. Controleer de `NULL` waarde met zijn eigen `assert` check[^test-assert-same]
+
+!!! important
+    Maak je tests zo klein en nadrukkelijk mogelijk. Dit maakt tests makkelijk leesbaar en daarmee begrijpelijk.
+    Begrijpelijke testen geven een goed inzicht in over complexe code. Gebruik daarom zoveel mogelijk de assert[^test-assert-same]
+    opties specifiek voor wat je wilt controleren.
 
 [^test-definitie]: [Van Dale definitie voor "test"](https://www.vandale.nl/gratis-woordenboek/nederlands/betekenis/test#.Ywy-LuxByo0){target="_blank"}
 [^test-assert-same]: [Assert checks in PHPUnit](https://phpunit.readthedocs.io/en/9.5/assertions.html){target="_blank"}
