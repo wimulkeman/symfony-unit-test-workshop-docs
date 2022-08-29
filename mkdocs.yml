@@ -29,6 +29,7 @@ theme:
 
   features:
     - navigation.tabs
+    - content.code.annotate
 
 repo_url: https://bitbucket.org/assuradeurengilde/unit-testing-workshop
 repo_name: Workshop Code
