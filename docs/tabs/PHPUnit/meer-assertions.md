@@ -30,4 +30,9 @@ sh bin/php vendor/bin/phpunit --testdox
     overbodig. __Voorkom dat je overbodige tests schrijft welke al door return types en typehints worden
     afgevangen.__
 
+Nu we weten hoe we de return waarden kunnen valideren is het tijd voor de volgende stap. We gaan
+bezig met het testen isoleren van onze code. We gaan [mocken][Mocking] 🪞!
+
+[Mocking]: /tabs/Referenties/terminologie/#mocks "Mocks zijn in test beschreven gedragingen van afhankelijkheden"
+
 [^test-assert-same]: [Assert checks in PHPUnit](https://phpunit.readthedocs.io/en/9.5/assertions.html){target="_blank"}
