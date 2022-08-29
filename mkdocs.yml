@@ -51,6 +51,7 @@ nav:
       - Installatie: tabs/Setup/installatie.md
   - PHPUnit:
       - Eerste Test (Asserts): tabs/PHPUnit/eerste-test-assert.md
+      - Meer Assertions: tabs/PHPUnit/meer-assertions.md
   - Laravel:
       - Laravel + PHPUnit: tabs/Laravel/testen-binnen-laravel.md
   - Extracurriculair:
