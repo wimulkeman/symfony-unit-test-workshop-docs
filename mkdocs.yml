@@ -49,7 +49,7 @@ nav:
   - Setup:
       - Installatie: tabs/Setup/installatie.md
   - PHPUnit:
-      - Introductie: tabs/PHPUnit/introductie-in-phpunit.md
+      - Eerste Test (Asserts): tabs/PHPUnit/eerste-test-assert.md
   - Laravel:
       - Laravel + PHPUnit: tabs/Laravel/testen-binnen-laravel.md
   - Referenties:
