@@ -5,7 +5,7 @@ Bij het testen van een applicatie kom je vaak verschillende termen [^1] tegen:
 
 * Unit Tests
 * Integration Tests
-* E2E (End-to-End) Tests
+* E2E (End-to-End) / Feature Tests
 
 Binnen deze workshop hebben wij de focus gelegd op __unit tests__,
 maar wat is het verschil tussen deze test vormen?
@@ -50,9 +50,9 @@ om database calls te vervangen.
 gedefinieerd.
 - Een test bestand beslaat een groep van aan elkaar verwante functionaliteiten
 
-## E2E Tests
+## E2E /Feature Tests
 Boven de [Integration Tests](#integration-tests) liggen E2E (End-To-End) Tests. Bij een E2E test worden meer
-functionaliteiten gecombineerd vanuit een flow getest.
+functionaliteiten gecombineerd vanuit een flow getest. Een E2E word ook wel een Feature Test genoemd.
 
 Een voorbeeld van een E2E test is het controleren van het inloggen van een gebruiker. Daarbij worden tijdens
 het testen van de inlog flow op de achtergrond de functionaliteiten getest om een gebruiker te valideren, bij te houden
