@@ -52,6 +52,9 @@ nav:
       - Eerste Test (Asserts): tabs/PHPUnit/eerste-test-assert.md
   - Laravel:
       - Laravel + PHPUnit: tabs/Laravel/testen-binnen-laravel.md
+  - Extracurriculair:
+      - (Native) Functies mocken: tabs/Extracurriculair/functies-mocken.md
+      - Code Coverage: tabs/Extracurriculair/code-coverage.md
   - Referenties:
       - E2E vs Unit vs Integration Tests: tabs/Referenties/e2e-vs-unit-vs-integration-test.md
       - Terminologie: tabs/Referenties/terminologie.md
