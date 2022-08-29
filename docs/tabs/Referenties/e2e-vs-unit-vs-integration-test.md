@@ -1,4 +1,4 @@
-E2E vs Unit vs Integration Tests
+Unit vs Integration vs E2E Tests
 ===============================
 
 Bij het testen van een applicatie kom je vaak verschillende termen [^1] tegen:
@@ -86,4 +86,4 @@ tests zijn.
 [Stubs]: /tabs/Referenties/terminologie/#stubs 'Stubs zijn "Domme implementaties" welke een productie implementatie vervangen maar altijd dezelfde state terug geven'
 [Dummies]: /tabs/Referenties/terminologie/#dummies "Dummies zijn vervangende instanties welke niet een rol spelen in de uitgevoerde (test) code"
 
-[^1]: [Lawrence Tan - Unit Tests, UI Tests, Integration Tests & End-To-End Tests](https://lawrey.medium.com/unit-tests-ui-tests-integration-tests-end-to-end-tests-c0d98e0218a6)
+[^1]: [Lawrence Tan - Unit Tests, UI Tests, Integration Tests & End-To-End Tests](https://lawrey.medium.com/unit-tests-ui-tests-integration-tests-end-to-end-tests-c0d98e0218a6){target="_blank""}

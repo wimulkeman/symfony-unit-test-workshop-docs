@@ -60,4 +60,4 @@ de reactie van code is op de werking van een implementatie waar het van afhankel
 Mocks hebben net als [Stubs](#stubs) het voordeel dat ermee voorkomen kan worden dat er veranderingen binnen het systeem
 daadwerkelijk worden doorgevoerd.
 
-[^1]: [Martin Fowler - Mocks aren't Strubs #The Difference Between Mocks and Stubs](https://martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs)
+[^1]: [Martin Fowler - Mocks aren't Strubs #The Difference Between Mocks and Stubs](https://martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs){target="_blank""}
