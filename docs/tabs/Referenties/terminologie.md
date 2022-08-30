@@ -1,7 +1,7 @@
 Test Terminologie
 =================
 
-## Dummies [^1]
+## Dummies
 
 !!! note
     Dummies worden **buiten** de test implementatie om gedefinieerd. Ze worden dus op zichzelf geïmplementeerd
@@ -11,7 +11,7 @@ Objecten welke aangemaakt worden en doorgegeven worden, maar niet binnen de gete
 gebruikt. Een voorbeeld zou een vanuit een interface vereiste argument kunnen zijn waar de functie
 niks mee doet.
 
-## Fakes [^1]
+## Fakes
 
 !!! note
     Fakes worden **buiten** de test implementatie om gedefinieerd. Ze worden dus op zichzelf geïmplementeerd
@@ -21,7 +21,7 @@ Objecten welke daadwerkelijk worden gebruikt, maar niet-productie bevatten. Bijv
 weg te schrijven naar een in-memory database in plaats van de daadwerkelijke database.
 
 
-## Mocks [^1]
+## Mocks
 
 !!! warning
     Mocks worden **binnen** de test implementatie gedefinieerd. Hierdoor kan dezelfde mock worden
@@ -40,7 +40,7 @@ de reactie van code is op de werking van een implementatie waar het van afhankel
 Mocks hebben net als [Stubs](#stubs) het voordeel dat ermee voorkomen kan worden dat er veranderingen binnen het systeem
 daadwerkelijk worden doorgevoerd.
 
-## Stubs [^1]
+## Stubs
 
 !!! note
     Stubs worden **buiten** de test implementatie om gedefinieerd. Ze worden dus op zichzelf geïmplementeerd
@@ -52,7 +52,7 @@ de productie onderdelen waardoor ze alleen vanuit de tests benaderbaar en nuttig
 Stubs en [Mocks](#mocks) kunnen ingezet worden om te voorkomen dat er daadwerkelijke interactie met de rest van het
 systeem plaatsvindt.
 
-## Spies [^1]
+## Spies
 
 !!! note
     Spies worden **buiten** de test implementatie om gedefinieerd. Hierdoor kan dezelfde spy worden
@@ -64,8 +64,8 @@ kan bijvoorbeeld zijn dat een service bijhoudt hoe vaak deze is aangeroepen en m
 ## Test Doubles
 
 Wanneer je code gaat testen welke afhankelijkheden heeft dan probeer je deze afhankelijkheden te isoleren. Door de
-isolatie weet je zeker dat je test altijd hetzelfde draait. __Test Doubles__ is een overkoepelende benaming voor de
+isolatie weet je zeker dat je test altijd hetzelfde draait. __Test Doubles__[^1] is een overkoepelende benaming voor de
 verschillende beschikbare opties voor het isoleren van afhankelijkheden. Onder Test Doubles vallen [Dummies](#dummies-1),
-[Fakes](#fakes-1), [Mocks](#mocks-1), [Stubs](#stubs-1) en [Spies](#spies-1).
+[Fakes](#fakes), [Mocks](#mocks), [Stubs](#stubs) en [Spies](#spies).
 
 [^1]: [Martin Fowler - Mocks aren't Strubs #The Difference Between Mocks and Stubs](https://martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs){target="_blank""}
