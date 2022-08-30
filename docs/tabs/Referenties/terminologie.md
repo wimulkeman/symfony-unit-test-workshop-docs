@@ -20,6 +20,26 @@ niks mee doet.
 Objecten welke daadwerkelijk worden gebruikt, maar niet-productie bevatten. Bijvoorbeeld om informatie
 weg te schrijven naar een in-memory database in plaats van de daadwerkelijke database.
 
+
+## Mocks [^1]
+
+!!! warning
+    Mocks worden **binnen** de test implementatie gedefinieerd. Hierdoor kan dezelfde mock worden
+    hergebruikt binnen verschillende tests.
+
+Mocks zijn een laagje om daadwerkelijke implementaties heen. Deze laag bevat de verwachtingen voor de
+wijze:
+
+- Waarmee de implementatie wordt aangeroepen
+- Hoe vaak de implementatie wordt aangeroepen
+- Waarmee de implementatie reageert op de aanroepen
+
+Mocks worden door hun eigenschappen gebruikt om in (unit) tests geïsoleerd te kunnen controleren wat
+de reactie van code is op de werking van een implementatie waar het van afhankelijk is.
+
+Mocks hebben net als [Stubs](#stubs) het voordeel dat ermee voorkomen kan worden dat er veranderingen binnen het systeem
+daadwerkelijk worden doorgevoerd.
+
 ## Stubs [^1]
 
 !!! note
@@ -41,23 +61,11 @@ systeem plaatsvindt.
 Zijn [Stubs](#stubs) met een extra functionaliteit. Ze houden bij hoe ze worden aangeroepen. Een toevoeging
 kan bijvoorbeeld zijn dat een service bijhoudt hoe vaak deze is aangeroepen en met welke waarden.
 
-## Mocks [^1]
+## Test Doubles
 
-!!! warning
-    Mocks worden **binnen** de test implementatie gedefinieerd. Hierdoor kan dezelfde mock worden
-    hergebruikt binnen verschillende tests.
-
-Mocks zijn een laagje om daadwerkelijke implementaties heen. Deze laag bevat de verwachtingen voor de
-wijze:
-
-- Waarmee de implementatie wordt aangeroepen
-- Hoe vaak de implementatie wordt aangeroepen
-- Waarmee de implementatie reageert op de aanroepen
-
-Mocks worden door hun eigenschappen gebruikt om in (unit) tests geïsoleerd te kunnen controleren wat
-de reactie van code is op de werking van een implementatie waar het van afhankelijk is.
-
-Mocks hebben net als [Stubs](#stubs) het voordeel dat ermee voorkomen kan worden dat er veranderingen binnen het systeem
-daadwerkelijk worden doorgevoerd.
+Wanneer je code gaat testen welke afhankelijkheden heeft dan probeer je deze afhankelijkheden te isoleren. Door de
+isolatie weet je zeker dat je test altijd hetzelfde draait. __Test Doubles__ is een overkoepelende benaming voor de
+verschillende beschikbare opties voor het isoleren van afhankelijkheden. Onder Test Doubles vallen [Dummies](#dummies-1),
+[Fakes](#fakes-1), [Mocks](#mocks-1), [Stubs](#stubs-1) en [Spies](#spies-1).
 
 [^1]: [Martin Fowler - Mocks aren't Strubs #The Difference Between Mocks and Stubs](https://martinfowler.com/articles/mocksArentStubs.html#TheDifferenceBetweenMocksAndStubs){target="_blank""}
