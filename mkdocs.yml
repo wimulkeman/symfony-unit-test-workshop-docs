@@ -53,6 +53,8 @@ nav:
       - Eerste Test (Asserts): tabs/PHPUnit/eerste-test-assert.md
       - Meer Assertions: tabs/PHPUnit/meer-assertions.md
       - Mocking: tabs/PHPUnit/mocking.md
+      - setUp / tearDown: tabs/PHPUnit/test-setup-teardown.md
+      - Exceptions: tabs/PHPUnit/exceptions.md
   - Laravel:
       - Laravel + PHPUnit: tabs/Laravel/testen-binnen-laravel.md
   - Extracurriculair:
