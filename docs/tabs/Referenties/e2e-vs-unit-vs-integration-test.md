@@ -50,7 +50,7 @@ om database calls te vervangen.
 gedefinieerd.
 - Een test bestand beslaat een groep van aan elkaar verwante functionaliteiten
 
-## E2E /Feature Tests
+## E2E / Feature Tests
 Boven de [Integration Tests](#integration-tests) liggen E2E (End-To-End) Tests. Bij een E2E test worden meer
 functionaliteiten gecombineerd vanuit een flow getest. Een E2E word ook wel een Feature Test genoemd.
 
