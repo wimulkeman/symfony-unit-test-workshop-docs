@@ -1,0 +1,1038 @@
+
+<!doctype html>
+<html lang="nl" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>Unit vs Integration vs E2E Tests - Unit Test Workshop</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#unit-vs-integration-vs-e2e-tests" class="md-skip">
+          Ga naar inhoud
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Unit Test Workshop" class="md-header__button md-logo" aria-label="Unit Test Workshop" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Unit Test Workshop
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Unit vs Integration vs E2E Tests
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent=""  aria-label="Donkere modus"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Donkere modus" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent=""  aria-label="Lichte modus"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Lichte modus" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+    
+      <div class="md-header__source">
+        <a href="https://bitbucket.org/assuradeurengilde/unit-testing-workshop" title="Ga naar repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2.65 3C2.3 3 2 3.3 2 3.65v.12l2.73 16.5c.07.42.43.73.85.73h13.05c.31 0 .59-.22.64-.54L22 3.77a.643.643 0 0 0-.54-.73c-.03-.01-.07-.01-.11-.01L2.65 3M14.1 14.95H9.94L8.81 9.07h6.3l-1.01 5.88Z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Workshop Code
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Setup/installatie/" class="md-tabs__link">
+        Setup
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../PHPUnit/eerste-test-assert/" class="md-tabs__link">
+        PHPUnit
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Laravel/testen-binnen-laravel/" class="md-tabs__link">
+        Laravel
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Extracurriculair/functies-mocken/" class="md-tabs__link">
+        Extracurriculair
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
+        Referenties
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Unit Test Workshop" class="md-nav__button md-logo" aria-label="Unit Test Workshop" data-md-component="logo">
+      
+  <img src="../../../assets/images/logo.svg" alt="logo">
+
+    </a>
+    Unit Test Workshop
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://bitbucket.org/assuradeurengilde/unit-testing-workshop" title="Ga naar repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M2.65 3C2.3 3 2 3.3 2 3.65v.12l2.73 16.5c.07.42.43.73.85.73h13.05c.31 0 .59-.22.64-.54L22 3.77a.643.643 0 0 0-.54-.73c-.03-.01-.07-.01-.11-.01L2.65 3M14.1 14.95H9.94L8.81 9.07h6.3l-1.01 5.88Z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    Workshop Code
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Setup
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Setup" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Setup
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Setup/installatie/" class="md-nav__link">
+        Installatie
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          PHPUnit
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="PHPUnit" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          PHPUnit
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PHPUnit/eerste-test-assert/" class="md-nav__link">
+        Eerste Test (Asserts)
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PHPUnit/meer-assertions/" class="md-nav__link">
+        Meer Assertions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PHPUnit/mocking/" class="md-nav__link">
+        Mocking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PHPUnit/test-setup-teardown/" class="md-nav__link">
+        setUp / tearDown
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../PHPUnit/exceptions/" class="md-nav__link">
+        Exceptions
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Laravel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Laravel" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Laravel
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Laravel/testen-binnen-laravel/" class="md-nav__link">
+        Laravel + PHPUnit
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Laravel/facade-mocking/" class="md-nav__link">
+        Facade Mocking
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Laravel/test-applicatie/" class="md-nav__link">
+        Test de Applicatie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Laravel/test-configuratie/" class="md-nav__link">
+        Test Configurations
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Extracurriculair
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Extracurriculair" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Extracurriculair
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Extracurriculair/functies-mocken/" class="md-nav__link">
+        (Native) Functies mocken
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          Referenties
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Referenties" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Referenties
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Unit vs Integration vs E2E Tests
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Unit vs Integration vs E2E Tests
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unit-tests" class="md-nav__link">
+    Unit Tests
+  </a>
+  
+    <nav class="md-nav" aria-label="Unit Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken" class="md-nav__link">
+    Kenmerken
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-tests" class="md-nav__link">
+    Integration Tests
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken_1" class="md-nav__link">
+    Kenmerken
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e2e-feature-tests" class="md-nav__link">
+    E2E / Feature Tests
+  </a>
+  
+    <nav class="md-nav" aria-label="E2E / Feature Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken_2" class="md-nav__link">
+    Kenmerken
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lagen" class="md-nav__link">
+    Lagen
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../terminologie/" class="md-nav__link">
+        Terminologie
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tools/" class="md-nav__link">
+        Test Tools
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Inhoudsopgave">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Inhoudsopgave
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#unit-tests" class="md-nav__link">
+    Unit Tests
+  </a>
+  
+    <nav class="md-nav" aria-label="Unit Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken" class="md-nav__link">
+    Kenmerken
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#integration-tests" class="md-nav__link">
+    Integration Tests
+  </a>
+  
+    <nav class="md-nav" aria-label="Integration Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken_1" class="md-nav__link">
+    Kenmerken
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#e2e-feature-tests" class="md-nav__link">
+    E2E / Feature Tests
+  </a>
+  
+    <nav class="md-nav" aria-label="E2E / Feature Tests">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#kenmerken_2" class="md-nav__link">
+    Kenmerken
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lagen" class="md-nav__link">
+    Lagen
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="unit-vs-integration-vs-e2e-tests">Unit vs Integration vs E2E Tests</h1>
+<p>Bij het testen van een applicatie kom je vaak verschillende termen <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> tegen:</p>
+<ul>
+<li>Unit Tests</li>
+<li>Integration Tests</li>
+<li>E2E (End-to-End) / Feature Tests</li>
+</ul>
+<p>Binnen deze workshop hebben wij de focus gelegd op <strong>unit tests</strong>,
+maar wat is het verschil tussen deze test vormen?</p>
+<h2 id="unit-tests">Unit Tests</h2>
+<p>Unit Tests zijn de laagste vorm van tests. Deze tests worden geschreven om een enkele methode geïsoleerd te testen.
+Binnen deze tests worden afhankelijkheden van andere onderdelen of verwachtingen van andere onderdelen vaak afgevangen
+via <a href="/tabs/Referenties/terminologie/#mocks" title="Mocks zijn in test beschreven gedragingen van afhankelijkheden">Mocking</a>.</p>
+<p>Unit Tests kunnen op zowel server code (backend) als op opmaak code (frontend) worden toegepast.</p>
+<p>Een voorbeeld van een unit test kan zijn om te controleren of een mapper functie op een gegeven waarde de
+juiste waarde terug geeft. Of om te controleren of een save functie daadwerkelijk uiteindelijk data naar
+een database probeert te sturen.</p>
+<h3 id="kenmerken">Kenmerken</h3>
+<ul>
+<li>Test de werking van 1 methode (class method of algemene functie)</li>
+<li>Afhankelijkheden worden gedicteerd door de test (mogelijk via <a href="/tabs/Referenties/terminologie/#mocks" title="Mocks zijn in test beschreven gedragingen van afhankelijkheden">Mocking</a>)</li>
+<li><a href="/tabs/Referenties/terminologie/#stubs" title="Stubs zijn &quot;Domme implementaties&quot; welke een productie implementatie vervangen maar altijd dezelfde state terug geven">Stubs</a> en <a href="/tabs/Referenties/terminologie/#dummies" title="Dummies zijn vervangende instanties welke niet een rol spelen in de uitgevoerde (test) code">Dummies</a> worden gebruikt als placeholder vulling van objecten.
+Bijvoorbeeld voor de return waarde van een mocked object.</li>
+<li><a href="/tabs/Referenties/terminologie/#fakers" title="Fakers zijn uitvoerbare implementaties welke productie implementaties vervangen">Fakers</a> worden niet gebruikt omdat de test geïsoleerd moet blijven tot zijn eigen
+functie/methode.</li>
+<li>Een test bestand beslaat een class</li>
+<li>Draait snel vergeleken met de andere tests</li>
+</ul>
+<h2 id="integration-tests">Integration Tests</h2>
+<p>Integration Tests zitten een niveau boven <a href="#unit-tests">Unit Tests</a>. Ze testen een collectie van methoden
+welke een onderlinge afhankelijkheid hebben.</p>
+<p>Een integratie test kan bijvoorbeeld worden gebruikt om te
+controleren of bij het bijwerken van een gebruiker zijn wachtwoord eerst wordt gekeken of de gebruiker
+bestaat om vervolgens een record daadwerkelijk in de database te updated.</p>
+<h3 id="kenmerken_1">Kenmerken</h3>
+<ul>
+<li>Test de werking van een enkele functionaliteit</li>
+<li>Afhankelijkheden worden niet door <a href="/tabs/Referenties/terminologie/#mocks" title="Mocks zijn in test beschreven gedragingen van afhankelijkheden">mocks</a> afgevangen.</li>
+<li>Wordt vaak gebruikt in combinatie met <a href="Fakers">Fakers</a> om bijvoorbeeld database verbindingen
+om database calls te vervangen.</li>
+<li><a href="/tabs/Referenties/terminologie/#stubs" title="Stubs zijn &quot;Domme implementaties&quot; welke een productie implementatie vervangen maar altijd dezelfde state terug geven">Stubs</a> en <a href="/tabs/Referenties/terminologie/#spies" title="Spies zijn Stubs welke extra informatie bijhouden over hoe ze benaderd zijn">Spies</a> worden niet gebruikt omdat hiermee implementatie gedrag wordt
+gedefinieerd.</li>
+<li>Een test bestand beslaat een groep van aan elkaar verwante functionaliteiten</li>
+</ul>
+<h2 id="e2e-feature-tests">E2E / Feature Tests</h2>
+<p>Boven de <a href="#integration-tests">Integration Tests</a> liggen E2E (End-To-End) Tests. Bij een E2E test worden meer
+functionaliteiten gecombineerd vanuit een flow getest. Een E2E word ook wel een Feature Test genoemd.</p>
+<p>Een voorbeeld van een E2E test is het controleren van het inloggen van een gebruiker. Daarbij worden tijdens
+het testen van de inlog flow op de achtergrond de functionaliteiten getest om een gebruiker te valideren, bij te houden
+dat deze nu actief is ingelogd en door te verwijzen naar de juiste pagina. Voor de E2E test is het daarbij alleen van
+belang dat de gebruiker zijn gegevens kan opgeven, daarna succesvol is ingelogd en op de juiste pagina is terecht
+gekomen. Hoe dit tot stand is gekomen is voor de E2E test niet van belang.</p>
+<h3 id="kenmerken_2">Kenmerken</h3>
+<ul>
+<li>Test een flow binnen de applicatie</li>
+<li>De E2E is erop gericht om op hoog niveau een handeling te controleren (gebruiker kan inloggen en komt op zijn
+landingspagina terecht)</li>
+<li>Vereist een geheel draaiende applicatie om de test in uit te kunnen voeren</li>
+<li>Gebruikt mogelijk de <a href="Fakers">Fakers</a> en de <a href="/tabs/Referenties/terminologie/#spies" title="Spies zijn Stubs welke extra informatie bijhouden over hoe ze benaderd zijn">Spies</a> om gedragingen te controleren binnen de applicatie</li>
+<li>Een test bestand beslaat een groep van aan elkaar verwante flows</li>
+</ul>
+<h2 id="lagen">Lagen</h2>
+<p>De verschillende testvormen kunnen goed als aanvulling naast elkaar
+worden gebruikt. De verdeling daarvan is goed te visualiseren als een
+gelaagde opzet. Hoe dieper je in de lagen komt, hoe geïsoleerder de
+tests zijn.</p>
+<figure>
+<p><img alt="Test vormen piramide" src="https://miro.medium.com/max/996/1*lqWygfNJqWQ4VCyjecQ6Eg.png" width="100%" />
+  </p>
+<figcaption>Test volgorde voor de verschillende vormen</figcaption>
+</figure>
+<div class="footnote">
+<hr />
+<ol>
+<li id="fn:1">
+<p><a _="&quot;" href="https://lawrey.medium.com/unit-tests-ui-tests-integration-tests-end-to-end-tests-c0d98e0218a6" target="_blank">Lawrence Tan - Unit Tests, UI Tests, Integration Tests &amp; End-To-End Tests</a>&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../../Extracurriculair/functies-mocken/" class="md-footer__link md-footer__link--prev" aria-label="Vorige: (Native) Functies mocken" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Vorige
+              </span>
+              (Native) Functies mocken
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../terminologie/" class="md-footer__link md-footer__link--next" aria-label="Volgende: Terminologie" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Volgende
+              </span>
+              Terminologie
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "content.code.annotate"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Gekopieerd naar klembord", "clipboard.copy": "Kopi\u00ebren naar klembord", "search.config.lang": "nl", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Zoeken", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "Geen overeenkomende documenten", "search.result.one": "1 overeenkomende document", "search.result.other": "# overeenkomende documenten", "search.result.placeholder": "Typ om te beginnen met zoeken", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+    
+  </body>
+</html>
