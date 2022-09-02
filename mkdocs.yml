@@ -62,7 +62,6 @@ nav:
       - Test Configurations: tabs/Laravel/test-configuratie.md
   - Extracurriculair:
       - (Native) Functies mocken: tabs/Extracurriculair/functies-mocken.md
-      - Code Coverage: tabs/Extracurriculair/code-coverage.md
   - Referenties:
       - Unit vs Integration vs E2E Tests: tabs/Referenties/e2e-vs-unit-vs-integration-test.md
       - Terminologie: tabs/Referenties/terminologie.md
