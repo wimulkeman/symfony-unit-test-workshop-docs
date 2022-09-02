@@ -57,6 +57,9 @@ nav:
       - Exceptions: tabs/PHPUnit/exceptions.md
   - Laravel:
       - Laravel + PHPUnit: tabs/Laravel/testen-binnen-laravel.md
+      - Facade Mocking: tabs/Laravel/facade-mocking.md
+      - Test de Applicatie: tabs/Laravel/test-applicatie.md
+      - Test Configurations: tabs/Laravel/test-configuratie.md
   - Extracurriculair:
       - (Native) Functies mocken: tabs/Extracurriculair/functies-mocken.md
       - Code Coverage: tabs/Extracurriculair/code-coverage.md
