@@ -104,6 +104,10 @@ class QuantityProviderTest extends TestCase
 Door de mock uit te breiden kunnen we aangeven dat we verwachten dat er 1x een call word gedaan op de `findBySku`
 methode met de opgegeven `$sku` waarde.
 
+Door het gebruik van de `createMock` functie krijgen we een `MockObject` terug voor het object. Het `MockObject`
+heeft een aantal functies beschikbaar[^mock-object-phpunit][^mock-object-mockery] welke we kunnen gebruiken om de
+toepassing van de afhankelijkheid te testen.
+
 ```php
 <?php
 
@@ -139,7 +143,7 @@ class QuantityProviderTest extends TestCase
 
 !!! note
     Je ziet dat er als return waarde voor de aanvraag op de repository een Stub[^Stubs] wordt teruggegeven. Dit wordt
-    gedaan zodat we niet alles hoeven te mocken, maar wel controle hebben over de waarden 
+    gedaan zodat we niet alles hoeven te mocken, maar wel controle hebben over de waarden
 
 Nu we een mock hebben met een return waarde kunnen we controleren of de flow in de code klopt.
 
@@ -178,7 +182,7 @@ class QuantityProviderTest extends TestCase
 Nu wordt het tijd om de theorie in de praktijk te gaan brengen!
 
 1. Maak een test aan voor de methode `App\Providers\UserProvider::getUserName`
-2. Maak in de test een Mock[^mock-object] aan voor de dependency UserRepository
+2. Maak in de test een Mock[^mock-object-phpunit] aan voor de dependency UserRepository
 3. Controleer via de Mock dat de findById methode 1 keer wordt aangeroepen
 4. Schrijf een test waarbij er een User stub wordt terug gegeven vanuit de repository
 5. Schrijf een test waarbij er geen User stub (NULL) wordt terug gegeven vanuit de repository
@@ -198,7 +202,7 @@ Je kunt in dergelijke situaties gebruik maken van de `consecutive` functies[^moc
 Probeer dit uit in de praktijk.
 
 1. Schrijf een test voor de functie `App\Providers\UserProvider::getUserNames`
-2. Maak in de test een Mock[^mock-object] aan voor de dependency UserRepository
+2. Maak in de test een Mock[^mock-object-phpunit] aan voor de dependency UserRepository
 3. Controleer via de Mock dat de findById methode 3 keer wordt aangeroepen
 4. Richt de mock in om meerdere calls te ontvangen
 5. Gebruik voor de functie `findById` als invoerargumenten `123`, `456` en `789`
@@ -215,5 +219,6 @@ Gelukt? Goed bezig. Je begint nu al een behoorlijke PHPUnit professional te word
 
 [^dependency-injection]: [PHP-DI - Undestanding Dependency Injection](https://php-di.org/doc/understanding-di.html){target="_blank"}
 [^inversion-of-control]: [Martin Fowler - Inversion of Control Containers and the Dependency Injection pattern](https://www.martinfowler.com/articles/injection.html){target="_blank"}
-[^mock-object]: [PHPUnit - Mock Objects](https://phpunit.readthedocs.io/en/9.5/test-doubles.html?highlight=mock#mock-objects){target="_blank"}
-[^mock-consecutive]: [PHPUnit - Mocking Consecutive Calls](https://phpunit.readthedocs.io/en/9.5/test-doubles.html?highlight=mock#test-doubles-stubs-examples-stubtest7-php){target="_blank"}
+[^mock-object-phpunit]: [PHPUnit Docs - Mock Objects](https://phpunit.readthedocs.io/en/9.5/test-doubles.html?highlight=mock#mock-objects){target="_blank"}
+[^mock-object-mockery]: [Mockery Docs - Getting Started](https://docs.mockery.io/en/latest/getting_started/index.html){target="_blank"}
+[^mock-consecutive]: [PHPUnit Docs - Mocking Consecutive Calls](https://phpunit.readthedocs.io/en/9.5/test-doubles.html?highlight=mock#test-doubles-stubs-examples-stubtest7-php){target="_blank"}
