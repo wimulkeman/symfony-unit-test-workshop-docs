@@ -29,6 +29,14 @@ hebben of de Docker image gebruiken.
 Wanneer je de command line executable beschikbaar hebt dan kun je de volgende
 opties gebruiken. Beide opties worden uitgevoerd in de root van het project.
 
+**Installatie**
+Je bent de volgende onderdelen nodig om gebruik te maken van mkdocs en het]
+gebruikte Material thema.
+```bash
+pip install mkdocs
+pip install mkdocs-material
+```
+
 **Bouwen van een statische site**
 ```bash
 mkdocs build
