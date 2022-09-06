@@ -898,8 +898,9 @@ toepassing van de afhankelijkheid te testen.</p>
         <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">setLocalStock</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
         <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">setRemoteStock</span><span class="p">(</span><span class="mi">1332</span><span class="p">);</span>
 
-        <span class="nv">$repo</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createMock</span><span class="p">(</span><span class="nx">App\Repository\ProductRepository</span><span class="o">::</span><span class="na">class</span><span class="p">)</span>
-            <span class="o">-&gt;</span><span class="na">expects</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">once</span><span class="p">)</span>
+        <span class="nv">$repo</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createMock</span><span class="p">(</span><span class="nx">App\Repository\ProductRepository</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+        <span class="nv">$repo</span><span class="o">-&gt;</span><span class="na">expects</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">once</span><span class="p">)</span>
+            <span class="o">-&gt;</span><span class="na">method</span><span class="p">(</span><span class="s1">&#39;findBySku&#39;</span><span class="p">)</span>
             <span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="nv">$sku</span><span class="p">)</span>
             <span class="o">-&gt;</span><span class="na">willReturn</span><span class="p">(</span><span class="nv">$product</span><span class="p">);</span>
 
@@ -936,8 +937,9 @@ gedaan zodat we niet alles hoeven te mocken, maar wel controle hebben over de wa
         <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">setLocalStock</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
         <span class="nv">$product</span><span class="o">-&gt;</span><span class="na">setRemoteStock</span><span class="p">(</span><span class="mi">1332</span><span class="p">);</span>
 
-        <span class="nv">$repo</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createMock</span><span class="p">(</span><span class="nx">App\Repository\ProductRepository</span><span class="o">::</span><span class="na">class</span><span class="p">)</span>
-            <span class="o">-&gt;</span><span class="na">expects</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">once</span><span class="p">)</span>
+        <span class="nv">$repo</span> <span class="o">=</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">createMock</span><span class="p">(</span><span class="nx">App\Repository\ProductRepository</span><span class="o">::</span><span class="na">class</span><span class="p">);</span>
+        <span class="nv">$repo</span><span class="o">-&gt;</span><span class="na">expects</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">once</span><span class="p">)</span>
+            <span class="o">-&gt;</span><span class="na">method</span><span class="p">(</span><span class="s1">&#39;findBySku&#39;</span><span class="p">)</span>
             <span class="o">-&gt;</span><span class="na">with</span><span class="p">(</span><span class="nv">$sku</span><span class="p">)</span>
             <span class="o">-&gt;</span><span class="na">willReturn</span><span class="p">(</span><span class="nv">$product</span><span class="p">);</span>
 
