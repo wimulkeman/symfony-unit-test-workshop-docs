@@ -128,6 +128,7 @@ class QuantityProviderTest extends TestCase
     
         $repo = $this->createMock(App\Repository\ProductRepository::class)
             ->expects($this->once)
+            ->method('findBySku')
             ->with($sku)
             ->willReturn($product);
         
@@ -167,6 +168,7 @@ class QuantityProviderTest extends TestCase
     
         $repo = $this->createMock(App\Repository\ProductRepository::class)
             ->expects($this->once)
+            ->method('findBySku')
             ->with($sku)
             ->willReturn($product);
         
