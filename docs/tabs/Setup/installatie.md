@@ -4,7 +4,7 @@ Installatie
 ## Basis
 PHPUnit is beschikbaar als een vendor via composer [^composer].
 Daarbij zijn er voor PHPUnit verschillende onderdelen welke beschikbaar zijn.
-Er is een basis package `phpuniy/phpunit` welke we altijd nodig hebben.
+Er is een basis package `phpunit/phpunit` welke we altijd nodig hebben.
 
 Deze kan worden toegevoegd met het commando
 
