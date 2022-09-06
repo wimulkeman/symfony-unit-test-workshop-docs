@@ -126,8 +126,8 @@ class QuantityProviderTest extends TestCase
         $product->setLocalStock(5);
         $product->setRemoteStock(1332);
     
-        $repo = $this->createMock(App\Repository\ProductRepository::class)
-            ->expects($this->once)
+        $repo = $this->createMock(App\Repository\ProductRepository::class);
+        $repo->expects($this->once)
             ->method('findBySku')
             ->with($sku)
             ->willReturn($product);
@@ -166,8 +166,8 @@ class QuantityProviderTest extends TestCase
         $product->setLocalStock(5);
         $product->setRemoteStock(1332);
     
-        $repo = $this->createMock(App\Repository\ProductRepository::class)
-            ->expects($this->once)
+        $repo = $this->createMock(App\Repository\ProductRepository::class);
+        $repo->expects($this->once)
             ->method('findBySku')
             ->with($sku)
             ->willReturn($product);
