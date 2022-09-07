@@ -6,7 +6,7 @@ Unit Test Workshop Docs
 Deze repository bevat de onderdelen welke uitgevoerd kunnen worden door de mensen
 welke de Unit Test Workshop volgen.
 
-De onderdelen zijn daarbij opgedeeld in verschillende categorieÃ«n om de deelnemers
+De onderdelen zijn daarbij opgedeeld in verschillende categorie‰n om de deelnemers
 eerst bekend te maken met PHPUnit op zichzelf voordat het wordt getoond in
 samenwerking met andere frameworks.
 
@@ -47,3 +47,7 @@ mkdocs build
 ```bash
 mkdocs serve
 ```
+
+TODO:
+- Omhschrijven dat een test functie moet voldoen aan een format test... waarbij de naam in camelCase of snake_case is
+- Bij een volgende workshop de site inhoud op een server plaatsen
