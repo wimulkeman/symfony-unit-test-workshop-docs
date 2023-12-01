@@ -9,7 +9,7 @@ Er is een basis package `phpunit/phpunit` welke we altijd nodig hebben.
 Deze kan worden toegevoegd met het commando
 
 ``` shell
-composer require --dev "phpunit/phpunit" ^9
+composer require --dev "phpunit/phpunit"
 ```
 
 ## Frameworks
