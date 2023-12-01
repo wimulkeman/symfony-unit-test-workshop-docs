@@ -15,10 +15,17 @@ composer require --dev "phpunit/phpunit" ^9
 ## Frameworks
 De standaard package is goed te gebruiken voor het testen van (op zichzelf staande)
 code, maar het mist ondersteuning voor het makkelijk kunnen testen van onderdelen van
-frameworks zoals Laravel.
+frameworks zoals Symfony, of services die met elkaar interacteren.
 
-Er zijn een aantal verschillende packages beschikbaar welke hiervoor extra
-ondersteuning bieden. Deze gedurende de rest van de workshop worden behandeld.
+Wanneer je test binnen Symfony is het daarom aan te raden om het volgende op te nemen in
+je composer middels require-dev:
+
+``` shell
+composer require --dev "symfony/test-pack"
+```
+
+Dit installeert PHPUnit en de benodigde onderdelen om binnen Symfony te kunnen testen.
+Binnen de workshop code maken we gebruik van [symfony/test-pack](https://symfony.com/doc/current/testing.html){target="_blank""}.
 
 ## Workshop code
 Binnen de workshop code is de require voor PHPUnit al opgenomen.
