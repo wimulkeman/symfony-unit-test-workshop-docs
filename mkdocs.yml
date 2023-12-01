@@ -21,7 +21,7 @@ theme:
         name: Lichte modus
 
   icon:
-    repo: material/bitbucket
+    repo: material/github
 
   favicon: assets/images/favicon.ico
 
@@ -32,7 +32,7 @@ theme:
     - content.code.annotate
     - content.code.copy
 
-repo_url: https://bitbucket.org/assuradeurengilde/unit-testing-workshop
+repo_url: https://github.com/wimulkeman/symfony-unit-test-workshop
 repo_name: Workshop Code
 edit_uri: ""
 

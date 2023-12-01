@@ -24,7 +24,7 @@ ondersteuning bieden. Deze gedurende de rest van de workshop worden behandeld.
 Binnen de workshop code is de require voor PHPUnit al opgenomen.
 
 1. Begin daarom met het binnenhalen van het project vanuit de
-[repository](https://bitbucket.org/assuradeurengilde/unit-testing-workshop){target="_blank""}.
+[repository](https://github.com/wimulkeman/symfony-unit-test-workshop){target="_blank""}.
 2. Maak na het binnenhalen van de repository een branch aan voor je eigen wijzigingen.
 3. Draai het commando om de Docker container op te starten
 ```shell
