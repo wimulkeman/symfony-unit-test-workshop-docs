@@ -1,5 +1,5 @@
-Unit vs Integration vs E2E Tests
-===============================
+Application vs Integration vs E2E Tests
+=======================================
 
 Bij het testen van een applicatie kom je vaak verschillende termen [^1] tegen:
 
@@ -40,6 +40,11 @@ Een integratie test kan bijvoorbeeld worden gebruikt om te
 controleren of bij het bijwerken van een gebruiker zijn wachtwoord eerst wordt gekeken of de gebruiker
 bestaat om vervolgens een record daadwerkelijk in de database te updated.
 
+Symfony heeft een [KernelTestCase](https://symfony.com/doc/current/testing.html#integration-tests){target="_blank""}
+beschikbaar welke je kunt gebruiken om een integratie test op te zetten. Deze test case zorgt ervoor dat de
+applicatie wordt opgestart en dat je toegang hebt tot de container. Daarbij kun je de container gebruiken om
+bijvoorbeeld een database connectie op te halen.
+
 ### Kenmerken
 
 - Test de werking van een enkele functionaliteit
@@ -50,8 +55,8 @@ om database calls te vervangen.
 gedefinieerd.
 - Een test bestand beslaat een groep van aan elkaar verwante functionaliteiten
 
-## E2E / Feature Tests
-Boven de [Integration Tests](#integration-tests) liggen E2E (End-To-End) Tests. Bij een E2E test worden meer
+## Application / E2E / Feature Tests
+Boven de [Integration Tests](#integration-tests) liggen Application of E2E (End-To-End) Tests. Bij een E2E test worden meer
 functionaliteiten gecombineerd vanuit een flow getest. Een E2E word ook wel een Feature Test genoemd.
 
 Een voorbeeld van een E2E test is het controleren van het inloggen van een gebruiker. Daarbij worden tijdens

@@ -61,6 +61,6 @@ nav:
   - Extracurriculair:
       - (Native) Functies mocken: tabs/Extracurriculair/functies-mocken.md
   - Referenties:
-      - Unit vs Integration vs E2E Tests: tabs/Referenties/e2e-vs-unit-vs-integration-test.md
+      - Unit vs Integration vs E2E Tests: tabs/Referenties/application-vs-unit-vs-integration-test.md
       - Terminologie: tabs/Referenties/terminologie.md
       - Test Tools: tabs/Referenties/tools.md
