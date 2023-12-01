@@ -14,6 +14,6 @@ De stappen zelf zijn opgedeeld in een aantal hoofdonderdelen:
 
 1. Setup: Hoe start je met Unit Tests binnen je project?
 2. PHPUnit: Hoe test je code met de PHPUnit vendor?
-3. Laravel: Hoe kun je Unit Tests schrijven voor Laravel onderdelen?
+3. Symfony: Hoe kun je Unit Tests schrijven voor Symfony onderdelen?
 4. Extracurriculair: Wil je extra uitdaging? Probeer dan deze opdrachten
 5. Referenties: Ben je even de uitleg bij de term kwijt? Kijk dan onder dit gedeelte.
