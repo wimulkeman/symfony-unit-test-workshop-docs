@@ -33,15 +33,23 @@ Binnen de workshop code is de require voor PHPUnit al opgenomen.
 1. Begin daarom met het binnenhalen van het project vanuit de
 [repository](https://github.com/wimulkeman/symfony-unit-test-workshop){target="_blank""}.
 2. Maak na het binnenhalen van de repository een branch aan voor je eigen wijzigingen.
-3. Draai het commando om de Docker container op te starten
+3. Draai het commando om de Docker image aan te maken
 ```shell
-docker-compose up -d
+make setup
 ```
-4. Draai het commando om de benodigde vendors op te halen
+4. Draai het commando om de container te starten
 ```shell
-sh bin/composer install
+make up
 ```
-5. Als je een versienummer van de PHPUnit package op kunt halen dan staat het project klaar
+5. Draai het commando om de benodigde vendors te laden
+```shell
+make bootstrap
+```
+6. Draai het commando om in te loggen op de container
+```shell
+make shell
+```
+7. Als je een versienummer van de PHPUnit package op kunt halen dan staat het project klaar
 ```shell
 sh bin/php vendor/bin/phpunit --version
 ```
