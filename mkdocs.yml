@@ -1,4 +1,4 @@
-site_name: Unit Test Workshop
+site_name: "Workshop: Unit Testing in Symfony"
 
 theme:
   name: material
