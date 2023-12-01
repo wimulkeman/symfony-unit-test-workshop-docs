@@ -30,6 +30,18 @@ Wanneer je de command line executable beschikbaar hebt dan kun je de volgende
 opties gebruiken. Beide opties worden uitgevoerd in de root van het project.
 
 **Installatie**
+
+__Via Docker__
+
+Draai het volgende commando in de root van het project om de documentatie
+te kunnen bekijken via de browser http://127.0.0.1:8000:
+
+```bash
+docker run --rm -it -p 8000:8000 -v ${PWD}:/docs squidfunk/mkdocs-material
+```
+
+__Handmatige installatie__
+
 Je bent de volgende onderdelen nodig om gebruik te maken van mkdocs en het]
 gebruikte Material thema.
 ```bash
