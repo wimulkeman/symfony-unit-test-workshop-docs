@@ -12,12 +12,12 @@ In dit onderdeel gaan we verschillende return waarden controleren.
 4. Schrijf de tests met de specifieke `assert` checks[^test-assert-same]
 5. Controleer of je test werkt met het commando
 ```shell
-sh bin/php vendor/bin/phpunit --testdox
+php vendor/bin/phpunit --testdox
 ```
 
 ## Testen van objects en arrays
 1. Maak een test aan voor de `handle` functie van de class  `App\Handler\PageHandler`
-2. Test dat je een `Illuminate\Support\Collection` terug krijgt uit de functie
+2. Test dat je een `Doctrine\Common\Collections\Collection` interface terug krijgt uit de functie
 3. Test dat je kunt tellen hoeveel items er in collectie zitten door te controleren op de interface `\Countable`
 4. Test dat er in de collection 4 items zitten
 5. Test dat er een item gezocht kan worden in de response van de functie door te controleren of de `Iterable` is 

@@ -183,13 +183,13 @@ class QuantityProviderTest extends TestCase
 
 Nu wordt het tijd om de theorie in de praktijk te gaan brengen!
 
-1. Maak een test aan voor de methode `App\Providers\UserProvider::getUserName`
+1. Maak een test aan voor de methode `App\Provider\UserProvider::getName`
 2. Maak in de test een Mock[^mock-object-phpunit] aan voor de dependency UserRepository
 3. Controleer via de Mock dat de findById methode 1 keer wordt aangeroepen
 4. Schrijf een test waarbij er een User stub wordt terug gegeven vanuit de repository
 5. Schrijf een test waarbij er geen User stub (NULL) wordt terug gegeven vanuit de repository
-6. Kijk wat er gebeurd als je in een test 2 keer de `getUserName` methode uitvoert. Dit zou vanuit de `expect` van de
-Mock een gefaalde testuitslag moeten geven 
+6. Kijk wat er gebeurt als je in een test 2 keer de `getName` methode uitvoert. Dit zou vanuit de `expect` van de
+Mock een gefaalde testuitslag moeten geven
 
 Gelukt! Je hebt nu 2 belangrijke onderdelen in PHPUnit getackeld. Je weet hoe je waarden kunt controleren via
 __asserst__ en je kunt nu je afhankelijkheden controleren via __[test doubles][Test-doubles]__ zoals __[mocks][Mocking]__.

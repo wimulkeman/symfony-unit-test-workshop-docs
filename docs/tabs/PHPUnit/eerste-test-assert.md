@@ -22,7 +22,7 @@ Binnen de workshop code staat de class `App\Mapper\BarMapper`. In deze mapper zi
 `foo` waarde terug geeft door een `assert`[^test-assert-same] te gebruiken.
 4. Controleer of je test werkt door het uitvoeren van het volgende commando
 ```shell
-sh bin/php vendor/bin/phpunit --testdox
+php vendor/bin/phpunit --testdox
 ```
 Je zou daarbij een volgend overzicht moeten krijgen (de test regel is afhankelijk van je benaming van de test functie)
 ![Eerste test resultaat](/assets/screencasts/img/first-test-result.png)

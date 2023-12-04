@@ -6,7 +6,7 @@ specifieke onderdelen testen.
 
 Symfony ondersteund het testen van haar eigen onderdelen via verschillende manieren.
 Deze manieren zijn onder andere terug te lezen in de documentatie[^symfony-test-documentatie]. 
-Laravel ondersteund zowel Unit[^Unit Test], Integration als Application tests.
+Symfony ondersteund zowel Unit[^Unit Test], Integration als Application tests.
 
 [^symfony-test-documentatie]: [Symfony Documentatie - Testing](https://symfony.com/doc/current/testing.html){target=_blank}
 
