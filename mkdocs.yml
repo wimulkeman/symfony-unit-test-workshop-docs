@@ -55,6 +55,7 @@ nav:
       - Meer Assertions: tabs/PHPUnit/meer-assertions.md
       - Mocking: tabs/PHPUnit/mocking.md
       - setUp / tearDown: tabs/PHPUnit/test-setup-teardown.md
+      - Data Providers: tabs/PHPUnit/data-providers.md
       - Exceptions: tabs/PHPUnit/exceptions.md
   - Symfony:
       - Symfony + PHPUnit: tabs/Symfony/testen-binnen-symfony.md
