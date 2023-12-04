@@ -199,7 +199,9 @@ __asserst__ en je kunt nu je afhankelijkheden controleren via __[test doubles][T
 Maar... wat nu als je meerdere calls doet naar dezelfde afhankelijkheid? Er zijn situaties
 waarin je meerdere calls doet naar een afhankelijkheid, maar de reactie per call verschilt.
 
-Je kunt in dergelijke situaties gebruik maken van de `consecutive` functies[^mock-consecutive] bij de mock.
+Tot PHPUnit kon je in dergelijke situaties gebruik maken van de `consecutive` functies[^mock-consecutive]
+bij de mock. Deze is helaas in PHPUnit 10 verwijderd. Gelukkig is er een alternatief beschikbaar in de
+vorm van een `willReturnCallback` functie[^mock-return-callback].
 
 Probeer dit uit in de praktijk.
 
@@ -223,4 +225,5 @@ Gelukt? Goed bezig. Je begint nu al een behoorlijke PHPUnit professional te word
 [^inversion-of-control]: [Martin Fowler - Inversion of Control Containers and the Dependency Injection pattern](https://www.martinfowler.com/articles/injection.html){target="_blank"}
 [^mock-object-phpunit]: [PHPUnit Docs - Mock Objects](https://phpunit.readthedocs.io/en/9.5/test-doubles.html?highlight=mock#mock-objects){target="_blank"}
 [^mock-object-mockery]: [Mockery Docs - Getting Started](https://docs.mockery.io/en/latest/getting_started/index.html){target="_blank"}
-[^mock-consecutive]: [PHPUnit Docs - Mocking Consecutive Calls](https://phpunit.readthedocs.io/en/9.5/test-doubles.html?highlight=mock#test-doubles-stubs-examples-stubtest7-php){target="_blank"}
+[^mock-consecutive]: [PHPUnit Docs - Mocking Consecutive Calls](https://docs.phpunit.de/en/9.6/test-doubles.html?highlight=consecutive){target="_blank"}
+[^mock-return-callback]: [PHPUnit Docs - Mocking Consecutive Calls with Return Callback](https://docs.phpunit.de/en/10.5/test-doubles.html#willreturncallback){target="_blank"}
