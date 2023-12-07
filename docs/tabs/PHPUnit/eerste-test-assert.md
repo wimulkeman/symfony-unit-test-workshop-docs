@@ -52,4 +52,4 @@ controleren of je de situaties afdicht waarin het mis gaat in de code (unhappy f
     opties specifiek voor wat je wilt controleren.
 
 [^test-definitie]: [Van Dale definitie voor "test"](https://www.vandale.nl/gratis-woordenboek/nederlands/betekenis/test#.Ywy-LuxByo0){target="_blank"}
-[^test-assert-same]: [Assert checks in PHPUnit](https://phpunit.readthedocs.io/en/9.5/assertions.html){target="_blank"}
+[^test-assert-same]: [Assert checks in PHPUnit](https://docs.phpunit.de/en/10.0/assertions.html){target="_blank"}
