@@ -1,7 +1,7 @@
 Unit Test Workshop Docs
 =======================
 
-*[Workshop repository](https://bitbucket.org/assuradeurengilde/unit-testing-workshop)*
+*[Workshop repository](https://github.com/wimulkeman/symfony-unit-test-workshop)*
 
 Deze repository bevat de onderdelen welke uitgevoerd kunnen worden door de mensen
 welke de Unit Test Workshop volgen.
