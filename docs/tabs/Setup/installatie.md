@@ -51,7 +51,7 @@ make shell
 ```
 7. Als je een versienummer van de PHPUnit package op kunt halen dan staat het project klaar
 ```shell
-sh bin/php vendor/bin/phpunit --version
+vendor/bin/phpunit --version
 ```
 
 !!! note
