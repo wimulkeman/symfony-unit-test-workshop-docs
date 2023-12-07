@@ -25,7 +25,7 @@ composer require --dev "symfony/test-pack"
 ```
 
 Dit installeert PHPUnit en de benodigde onderdelen om binnen Symfony te kunnen testen.
-Binnen de workshop code maken we gebruik van [symfony/test-pack](https://symfony.com/doc/current/testing.html){target="_blank""}.
+Binnen de workshop code maken we gebruik van [symfony/test-pack](https://symfony.com/doc/current/testing.html){target="_blank"}.
 
 ## Workshop code
 Binnen de workshop code is de require voor PHPUnit al opgenomen.
