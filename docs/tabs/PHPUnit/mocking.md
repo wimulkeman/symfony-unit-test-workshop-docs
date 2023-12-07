@@ -205,7 +205,7 @@ vorm van een `willReturnCallback` functie[^mock-return-callback].
 
 Probeer dit uit in de praktijk.
 
-1. Schrijf een test voor de functie `App\Providers\UserProvider::getUserNames`
+1. Schrijf een test voor de functie `App\Provider\UserProvider::getNames`
 2. Maak in de test een Mock[^mock-object-phpunit] aan voor de dependency UserRepository
 3. Controleer via de Mock dat de findById methode 3 keer wordt aangeroepen
 4. Richt de mock in om meerdere calls te ontvangen
