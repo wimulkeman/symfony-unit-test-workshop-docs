@@ -14,7 +14,11 @@ in het Engels __Assertions__ genoemd. Binnen PHPUnit zijn deze __assertions__ de
 
 Binnen de workshop code staat de class `App\Mapper\BarMapper`. In deze mapper zit de functie `map`.
 
-1. Maak voor deze functie een test aan.
+!!! warning
+    Je test methoden moeten altijd met `test` beginnen. PHPUnit zoekt naar functies welke beginnen met `test
+    en voert deze uit als test.
+
+1. Maak voor deze functie een test aan. PHPUnit kan zowel met camelCase als snake_case methode namen omgaan.
    ![Test genereren in PHPStorm](/assets/screencasts/generate-test.gif)
 
 2. Maak de test aan in de namespace `Tests\Unit\Mapper`
