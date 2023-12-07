@@ -200,8 +200,9 @@ Maar... wat nu als je meerdere calls doet naar dezelfde afhankelijkheid? Er zijn
 waarin je meerdere calls doet naar een afhankelijkheid, maar de reactie per call verschilt.
 
 Tot PHPUnit kon je in dergelijke situaties gebruik maken van de `consecutive` functies[^mock-consecutive]
-bij de mock. Deze is helaas in PHPUnit 10 verwijderd. Gelukkig is er een alternatief beschikbaar in de
-vorm van een `willReturnCallback` functie[^mock-return-callback].
+bij de mock. Deze is helaas in PHPUnit 10 verwijderd. Gelukkig zijn er twee alternatieven beschikbaar in de
+vorm van een `willReturnCallback` functie[^mock-return-callback], en de combinatie van
+`with($this->callback(...))`[^mock-with-callback] met `willReturnOnConsecutiveCalls`.
 
 Probeer dit uit in de praktijk.
 
@@ -227,3 +228,4 @@ Gelukt? Goed bezig. Je begint nu al een behoorlijke PHPUnit professional te word
 [^mock-object-mockery]: [Mockery Docs - Getting Started](https://docs.mockery.io/en/latest/getting_started/index.html){target="_blank"}
 [^mock-consecutive]: [PHPUnit Docs - Mocking Consecutive Calls](https://docs.phpunit.de/en/9.6/test-doubles.html?highlight=consecutive){target="_blank"}
 [^mock-return-callback]: [PHPUnit Docs - Mocking Consecutive Calls with Return Callback](https://docs.phpunit.de/en/10.5/test-doubles.html#willreturncallback){target="_blank"}
+[^mock-with-callback]: [PHPUnit Docs - Mocking Consecutive Call arguments with Callback](https://docs.phpunit.de/en/10.5/test-doubles.html#with-callback){target="_blank"}
